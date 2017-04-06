@@ -1,0 +1,18 @@
+diff -urN ./aruco.pc.in ./../external/aruco/aruco.pc.in
+--- ./aruco.pc.in	2017-04-05 17:05:32.757955680 +0200
++++ ./../external/aruco/aruco.pc.in	2017-04-05 17:05:03.983260632 +0200
+@@ -11,4 +11,4 @@
+ Requires: 
+ Conflicts: 
+ Libs: -l@PROJECT_NAME@
+-Cflags: -I${includedir}/@PROJECT_NAME@ -I${includedir}
++Cflags: -I${includedir}/@PROJECT_NAME@ -I${includedir} -std=c++11
+diff -urN ./aruco-uninstalled.pc.in ./../external/aruco/aruco-uninstalled.pc.in
+--- ./aruco-uninstalled.pc.in	2017-04-05 17:06:02.100624938 +0200
++++ ./../external/aruco/aruco-uninstalled.pc.in	2017-04-05 17:02:25.646440663 +0200
+@@ -7,4 +7,4 @@
+ Version: @PROJECT_VERSION@
+ Requires: opencv >= 2.1.0
+ Libs: -L${libdir} -laruco
+-Cflags: -I${includedir}
++Cflags: -I${includedir} -std=c++11
