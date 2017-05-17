@@ -16,3 +16,15 @@ diff -urN ./aruco-uninstalled.pc.in ./../external/aruco/aruco-uninstalled.pc.in
  Libs: -L${libdir} -laruco
 -Cflags: -I${includedir}
 +Cflags: -I${includedir} -std=c++11
+diff -urN ../aruco-2.0.19/src/markermap.cpp aruco/src/markermap.cpp
+--- ../aruco-2.0.19/src/markermap.cpp   2017-02-03 12:30:06.000000000 +0100
++++ aruco/src/markermap.cpp     2017-05-17 16:43:51.055251283 +0200
+@@ -109,6 +109,7 @@
+     cv::FileNode markers = fs["aruco_bc_markers"];
+     int i = 0;
+     for (FileNodeIterator it = markers.begin(); it != markers.end(); ++it, i++) {
++        at(i).clear();
+         at(i).id = (*it)["id"];
+         FileNode FnCorners = (*it)["corners"];
+         for (FileNodeIterator itc = FnCorners.begin(); itc != FnCorners.end(); ++itc) {
+
